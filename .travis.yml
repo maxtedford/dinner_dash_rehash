@@ -1,0 +1,9 @@
+sudo: false
+language: ruby
+rvm:
+  - 2.3.1
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database dinner_dash_rehash_test;' -U postgres
+script: bundle exec rspec spec
